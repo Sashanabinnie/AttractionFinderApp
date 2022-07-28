@@ -1,36 +1,67 @@
-package testimonials.servicelayer.customerservice;
+package testimonials.service.customer;
 
 import junit.framework.TestCase;
-import testimonials.domainlayer.*;
-import testimonials.servicelayer.factory.*;
+import domain.Customer;
+import service.customerservice.CustomerServiceImpl;
+import service.customerservice.ICustomerService;
+import service.exceptions.CustomerException;
+import service.exceptions.ServiceLoadException;
+import service.factory.ServiceFactory;
+
+
 
 public class CustomerServiceImplTest extends TestCase {
 
-	private ServiceFactory ServiceFactory;
+
+	private ServiceFactory serviceFactory;
 	private Customer customer;
 
-	
-	@Override
+
 	protected void setUp() throws Exception {
 		super.setUp();
 
-		ServiceFactory = new ServiceFactory();
+		serviceFactory = ServiceFactory.getInstance();
 
-		customer = new Customer("001", "Sashana", "Binnie", "Sashanab",
-				"2022-07-18", "06.30,25,40");
+		customer = new Customer( 51615611l, "Sashana", "Binnie", "Sashanaab",
+				"July-22-2022", "07:30");
 
 	}
-		public final void testCustomer() {
 
-			ICustomerService customerService = ServiceFactory.getCustomerService();
-			assertTrue(customerService.authenticateCustomer(customer));
-			System.out.println("testAuthenticateCustomer PASSED");
 
-			CustomerServiceImpl customerServiceImpl = (CustomerServiceImpl) ServiceFactory
-					.getCustomerService();
-			assertTrue(CustomerServiceImpl.authenticateCustomer(customer));
-			System.out.println("testAuthenticateCustomer PASSED");
-		
+	public final void testValidateCustomer() {
+
+		ICustomerService customerService;
+		try {
+			customerService = (ICustomerService) serviceFactory
+					.getService(ICustomerService.NAME);
+			assertTrue(customerService.validateCustomer(customer));
+			System.out.println("testValidateCustomer PASSED");
+		} catch (ServiceLoadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("ServiceLoadException");
+		} catch (CustomerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("CustomerException");
+
+		}
+
+		try {
+			CustomerServiceImpl customerServiceImpl = (CustomerServiceImpl) serviceFactory
+					.getService(ICustomerService.NAME);
+			assertTrue(customerServiceImpl.validateCustomer(customer));
+			System.out.println("ValidateCustomer PASSED");
+		} catch (ServiceLoadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("ServiceLoadException");
+		} catch (CustomerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("CustomerException");
+
+		}
 	}
-	
+
 }

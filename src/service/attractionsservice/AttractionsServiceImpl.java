@@ -10,17 +10,8 @@ import java.io.ObjectInputStream;
 
 public class AttractionsServiceImpl implements IAttractionsService {
 	
-	/**
-	 * Authenticate attraction in application
-	 * 
-	 * @param Attractions- contains attraction information to be authenticated
-	 * @throws AttractionsException
-	 *             If the Attractions object in the composite is null or if the
-	 *             file that contains the attraction information is not found or
-	 *             If an unexpected exception is encountered while accessing the
-	 *             file.
-	 **/
 
+	@SuppressWarnings("unlikely-arg-type")
 	public boolean validateAttraction(Attractions attractions) 
 			throws AttractionsException {
 		
@@ -32,30 +23,23 @@ public class AttractionsServiceImpl implements IAttractionsService {
 					"ValidatedAttraction.out"));
 			Attractions validatedAttraction = (Attractions) input.readObject();
 
-			String inAttractions = Attractions.getAttractionName();
-			if (inAttractions != null) {
-				if (validatedAttraction.equals(inAttractions))
-					isValid = true;
-				else
-					isValid = false;
-			} else {
-				throw new AttractionsException(
-						"Null Attrcation passed to AttractionsServiceImpl");
-			}
+			String inAttractions = new String();
+			if (validatedAttraction.equals(inAttractions))
+				isValid = true;
+			else
+				isValid = false;
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("File containing validated attractions not found!");
-			throw new AttractionsException( "File containing validated attractions not found!", fnfe );
+			throw new AttractionsException( "File containing validated attractions not found!" );
 		} catch (IOException ioe) {
 			System.out
 					.println("IOException while accessing file containing registered users!");
 			throw new AttractionsException(
-					"IOException while accessing file containing registered users!",
-					ioe);
+					"IOException while accessing file containing registered users!");
 		} catch (ClassNotFoundException cnfe) { System.out.println("ClassNotFoundException while"
 				+ " reading file containing registered users!");
 			throw new AttractionsException(
-					"ClassNotFoundException while reading file containing validated attractions!",
-					cnfe);
+					"ClassNotFoundException while reading file containing validated attractions!");
 		} finally {
 			if (input != null) {
 				try {
@@ -69,6 +53,11 @@ public class AttractionsServiceImpl implements IAttractionsService {
 		return isValid;
 	}
 
+	@Override
+	public boolean validateAttractions(Attractions attractions) throws AttractionsException {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 
 }

@@ -20,6 +20,6 @@ public interface IAttractionsService extends IService {
 	 * 				    false - if failed to validate
 	 * */
 	
-	public boolean validateAttraction(Attractions attractions) throws AttractionsException;
+	public boolean validateAttractions(Attractions attractions) throws AttractionsException;
 
 }

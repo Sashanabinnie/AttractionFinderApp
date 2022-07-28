@@ -22,6 +22,6 @@ public interface ICustomerService extends IService{
 	 * */
 	
 
-public boolean authenticateCustomer (Customer customer) throws CustomerException; 
+public boolean validateCustomer (Customer customer) throws CustomerException; 
 
 }

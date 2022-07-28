@@ -1,9 +1,12 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
  
-public class Reviews {
+public class Reviews implements Serializable {
+	
+	private static final long serialVersionUID = 7661657477853633935L;
 		
 			private Long reviewID;
 			private String reviewDescription;
@@ -28,6 +31,7 @@ public Reviews(Long reviewID, String reviewDescription, String reviewer,
 //Getters and Setters
 			
 				
+
 		public Long getReviewID() {
 			return reviewID;
 		}

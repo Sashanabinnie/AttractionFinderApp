@@ -1,9 +1,12 @@
 package domain;
 
 import java.util.Objects;
+import java.io.Serializable;
 
-public class Attractions {
 
+public class Attractions implements Serializable {
+
+		private static final long serialVersionUID = 7661657477853633935L;
 		
 		private Long attractionID;
 		private String attractionName;

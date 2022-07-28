@@ -1,16 +1,18 @@
 package domain;
 
 import java.util.Objects;
+import java.io.Serializable;
 
-public class Customer {
+public class Customer implements Serializable {
 	 
+				private static final long serialVersionUID = 7661657477853633935L;
 			
-			private Long customerID;
-			private String customerFirstName;
-			private String customerLastName;
-			private String customerNickname;
-			private String dateCreated;
-			private String timeCreated;
+				private Long customerID;
+				private String customerFirstName;
+				private String customerLastName;
+				private String customerNickname;
+				private String dateCreated;
+				private String timeCreated;
 			
 			
 			
