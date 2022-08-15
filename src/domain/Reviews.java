@@ -6,8 +6,9 @@ import java.util.Objects;
  
 public class Reviews implements Serializable {
 	
-	private static final long serialVersionUID = 7661657477853633935L;
-		
+// Variables	
+	
+			private static final long serialVersionUID = 7661657477853633935L;
 			private Long reviewID;
 			private String reviewDescription;
 			private String reviewer;
@@ -28,9 +29,8 @@ public Reviews(Long reviewID, String reviewDescription, String reviewer,
 			
 		}
 
-//Getters and Setters
-			
-				
+// Getters and Setters
+						
 
 		public Long getReviewID() {
 			return reviewID;
@@ -82,7 +82,7 @@ public Reviews(Long reviewID, String reviewDescription, String reviewer,
 		}
 
 
-//Validation
+// Validation
 
 		public boolean validation() {
 			
@@ -111,15 +111,7 @@ public Reviews(Long reviewID, String reviewDescription, String reviewer,
 		
 		
 		
-//Generate Hashcode
-		
-		@Override
-		public int hashCode() {
-			return Objects.hash(reviewDate, reviewDescription, reviewID, reviewStars, reviewTime, reviewer);
-		}
-
-		
-//Equals Method
+// Equals Method
 		
 @Override
 		public boolean equals(Object obj) {
@@ -136,14 +128,23 @@ public Reviews(Long reviewID, String reviewDescription, String reviewer,
 					&& Objects.equals(reviewTime, other.reviewTime) && Objects.equals(reviewer, other.reviewer);
 		}
 		
-		
+
+// hashCode
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(reviewDate, reviewDescription, reviewID, reviewStars, reviewTime, reviewer);
+		}
+
+// toString
 
 @Override
 public String toString() {
 	return "Reviews [reviewID=" + reviewID + ", reviewDescription=" + reviewDescription + ", reviewer=" + reviewer
 			+ ", reviewDate=" + reviewDate + ", reviewTime=" + reviewTime + ", reviewStars=" + reviewStars + "]";
-}
+	
+	}
 
 }
 
-// Reviews myReviews = new Reviews("bs12", "This attraction is 5 stars");
+

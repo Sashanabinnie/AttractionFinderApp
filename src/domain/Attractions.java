@@ -6,8 +6,9 @@ import java.io.Serializable;
 
 public class Attractions implements Serializable {
 
+// Variables
+	
 		private static final long serialVersionUID = 7661657477853633935L;
-		
 		private Long attractionID;
 		private String attractionName;
 		private String attractionDescription;
@@ -15,12 +16,10 @@ public class Attractions implements Serializable {
 		private String uploadDay;
 		private String uploadMonth;
 		private String uploadYear;
-		private String uploadTime;
-	
+		private String uploadTime;	
 		
 		
-		
-//Constructor
+// Constructor
 		
 		public Attractions(Long attractionID, String attractionName, String attractionDescription, String uploadedBy,
 				String uploadDay, String uploadMonth, String uploadYear, String uploadTime) {
@@ -35,7 +34,11 @@ public class Attractions implements Serializable {
 			this.uploadTime = uploadTime;
 		}
 
-//Getters and Setters
+// Getters and Setters
+
+		public Attractions() {
+			// TODO Auto-generated constructor stub
+		}
 
 		public Long getAttractionID() {
 			return attractionID;
@@ -114,8 +117,17 @@ public class Attractions implements Serializable {
 			this.uploadTime = uploadTime;
 		}
 		
-//Validation
+		public void setReviews(Reviews reviews) {
+			// TODO Auto-generated method stub
+			
+		}
 		
+		public void getReviews(Reviews reviews) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+// Validation
 		
 		public boolean validation() {
 			
@@ -148,47 +160,41 @@ public class Attractions implements Serializable {
 		  
 		}
 
-// Hashcode
+		
+// Equals
+				public boolean equals(Object obj) {
+					if (this == obj)
+						return true;
+					if (obj == null)
+						return false;
+					if (getClass() != obj.getClass())
+						return false;
+					Attractions other = (Attractions) obj;
+					return Objects.equals(attractionDescription, other.attractionDescription)
+							&& Objects.equals(attractionID, other.attractionID)
+							&& Objects.equals(attractionName, other.attractionName)
+							&& Objects.equals(uploadDay, other.uploadDay) && Objects.equals(uploadMonth, other.uploadMonth)
+							&& Objects.equals(uploadTime, other.uploadTime) && Objects.equals(uploadYear, other.uploadYear)
+							&& Objects.equals(uploadedBy, other.uploadedBy);
+				}
+				
+// hashCode
+				
 		public int hashCode() {
 			return Objects.hash(attractionDescription, attractionID, attractionName, uploadDay, uploadMonth, uploadTime,
 					uploadYear, uploadedBy);
 		}
 
-// Equals
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Attractions other = (Attractions) obj;
-			return Objects.equals(attractionDescription, other.attractionDescription)
-					&& Objects.equals(attractionID, other.attractionID)
-					&& Objects.equals(attractionName, other.attractionName)
-					&& Objects.equals(uploadDay, other.uploadDay) && Objects.equals(uploadMonth, other.uploadMonth)
-					&& Objects.equals(uploadTime, other.uploadTime) && Objects.equals(uploadYear, other.uploadYear)
-					&& Objects.equals(uploadedBy, other.uploadedBy);
-		}
 		
-// To String
+// toString
 		@Override
 		public String toString() {
 			return "Attractions [attractionID=" + attractionID + ", attractionName=" + attractionName
 					+ ", attractionDescription=" + attractionDescription + ", uploadedBy=" + uploadedBy + ", uploadDay="
 					+ uploadDay + ", uploadMonth=" + uploadMonth + ", uploadYear=" + uploadYear + ", uploadTime="
 					+ uploadTime + "]";
+			
 		}
 
 		
-		
-
-		
-
-	
-	
-
-	
-	
-
 }

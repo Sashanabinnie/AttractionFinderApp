@@ -23,11 +23,12 @@ public class ServiceFactoryTest {
 	
 	@Test
 	public void testGetCustomerService() {
- 		ICustomerService customerService;
-		try {
-			customerService = (ICustomerService)serviceFactory.getService(ICustomerService.NAME);
+		ICustomerService customerService;
+ 		
+		try { customerService = (ICustomerService)serviceFactory.getService(ICustomerService.NAME);
 	  	    assertTrue(customerService instanceof CustomerServiceImpl);
-	        System.out.println("testCustomerService PASSED");	  	    
+	        System.out.println("Test CustomerService PASSED");
+	        
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,12 +37,13 @@ public class ServiceFactoryTest {
 	}
 	
 	@Test
-	public void testGetAttrcationsService() {
+	public void testGetAttractionsService() {
  		IAttractionsService attractionsService;
-		try {
-			attractionsService = (IAttractionsService)serviceFactory.getService(ICustomerService.NAME);
+ 		
+		try { attractionsService = (IAttractionsService)serviceFactory.getService(ICustomerService.NAME);
 	  	    assertTrue(attractionsService instanceof AttractionsServiceImpl);
-	        System.out.println("testAttractionsService PASSED");	  	    
+	        System.out.println("Test AttractionsService PASSED");
+	        
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,10 +54,11 @@ public class ServiceFactoryTest {
 	@Test
 	public void testGetReviewsService() {
  		IReviewsService reviewsService;
-		try {
-			reviewsService = (IReviewsService)serviceFactory.getService(IReviewsService.NAME);
+ 		
+		try { reviewsService = (IReviewsService)serviceFactory.getService(IReviewsService.NAME);
 	  	    assertTrue(reviewsService instanceof ReviewsServiceImpl);
-	        System.out.println("testReviewsService PASSED");	  	    
+	        System.out.println("Test ReviewsService PASSED");
+	        
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

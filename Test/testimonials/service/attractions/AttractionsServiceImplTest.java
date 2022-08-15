@@ -15,6 +15,7 @@ public class AttractionsServiceImplTest extends TestCase {
 
 	
 	protected void setUp() throws Exception {
+		
 		super.setUp();
 
 		serviceFactory = ServiceFactory.getInstance();
@@ -26,17 +27,19 @@ public class AttractionsServiceImplTest extends TestCase {
 	}
 
 	public final void testValidateAttrcations() {
-
 		IAttractionsService attractionsService;
+		
 		try {
 			attractionsService = (IAttractionsService) serviceFactory
-					.getService(ICustomerService.NAME);
+			.getService(IAttractionsService.NAME);
 			assertTrue(attractionsService.validateAttractions(attractions));
-			System.out.println("testValidateCustomer PASSED");
+			System.out.println("Test ValidateAttractions PASSED");
+			
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("ServiceLoadException");
+			
 		} catch (AttractionsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,13 +49,15 @@ public class AttractionsServiceImplTest extends TestCase {
 
 		try {
 			AttractionsServiceImpl AttractionsServiceImpl = (AttractionsServiceImpl) serviceFactory
-					.getService(ICustomerService.NAME);
+			.getService(ICustomerService.NAME);
 			assertTrue(AttractionsServiceImpl.validateAttractions(attractions));
 			System.out.println("ValidateAttractions PASSED");
+			
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("ServiceLoadException");
+			
 		} catch (AttractionsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

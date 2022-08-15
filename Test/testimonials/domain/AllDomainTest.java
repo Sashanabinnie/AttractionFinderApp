@@ -1,18 +1,21 @@
 package testimonials.domain;
 
-import junit.framework.TestCase;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
 
-
-
-@RunWith(Suite.class)
-@SuiteClasses({ AttractionsTest.class, CustomerTest.class, ReviewsTest.class })
-
-public class AllDomainTest extends TestCase {
+public class AllDomainTest {
 		
+public static Test suite() {
 	
-
+	TestSuite suite = new TestSuite("Test for Outsidee Project Domain");
+	
+	suite.addTestSuite(AttractionsTest.class);
+	suite.addTestSuite(ReviewsTest.class);
+	suite.addTestSuite(CustomerTest.class);
+	return suite;
+	
+	}
 }
+
+

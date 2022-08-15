@@ -13,6 +13,7 @@ import service.factory.ServiceFactory;
 @RunWith(Suite.class)
 @SuiteClasses({ ServiceFactory.class, CustomerServiceImplTest.class, ReviewsServiceImplTest.class,
 	AttractionsServiceImplTest.class})
+
 public class AllServicesTest extends TestCase {
 	
 	

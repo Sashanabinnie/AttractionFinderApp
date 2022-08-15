@@ -1,12 +1,12 @@
 package testimonials.domain;
 
-import static org.junit.Assert.assertFalse;
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
 import domain.Attractions;
 
-class AttractionsTest {
+public class AttractionsTest extends TestCase {
 	
 	Attractions a1;
 	Attractions a2;
@@ -40,7 +40,7 @@ class AttractionsTest {
 		assert (a1.equals(a2));
 		  System.out.println("Equality Test Passed");
 		  
-		assert (a2.equals(a3));
+		assertFalse (a2.equals(a3));
 		  System.out.println("Validation Test Not Passed");
 	}
 }

@@ -5,8 +5,8 @@ import java.io.Serializable;
 
 public class Customer implements Serializable {
 	 
+// Variables	
 				private static final long serialVersionUID = 7661657477853633935L;
-			
 				private Long customerID;
 				private String customerFirstName;
 				private String customerLastName;
@@ -28,7 +28,7 @@ public class Customer implements Serializable {
 				
 			}
 
-	//Getters and Setters
+// Getters and Setters
 			
 			public Long getCustomerID() {
 				return customerID;
@@ -79,7 +79,7 @@ public class Customer implements Serializable {
 			}
 			
 			
-	//Validation
+// Validation
 			
 			
 			public boolean validation() {
@@ -106,14 +106,8 @@ public class Customer implements Serializable {
 			return false;
 			  
 			}
-
-//Hashcode
-			@Override
-			public int hashCode() {
-				return Objects.hash(customerFirstName, customerID, customerLastName, customerNickname, dateCreated,
-						timeCreated);
-			}
-//Equals
+			
+// Equals
 			@Override
 			public boolean equals(Object obj) {
 				if (this == obj)
@@ -130,7 +124,14 @@ public class Customer implements Serializable {
 						&& Objects.equals(dateCreated, other.dateCreated)
 						&& Objects.equals(timeCreated, other.timeCreated);
 			}
-//To String
+			
+// hashCode
+			@Override
+			public int hashCode() {
+				return Objects.hash(customerFirstName, customerID, customerLastName, customerNickname, dateCreated,
+						timeCreated);
+						}
+// toString
 			@Override
 			public String toString() {
 				return "Customer [customerID=" + customerID + ", customerFirstName=" + customerFirstName
@@ -141,10 +142,7 @@ public class Customer implements Serializable {
 						+ getCustomerNickname() + ", getDateCreated()=" + getDateCreated() + ", getTimeCreated()="
 						+ getTimeCreated() + ", validation()=" + validation() + ", hashCode()=" + hashCode()
 						+ ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
+		
 			}
-
 			
-			
-			
-	
 }

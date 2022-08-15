@@ -18,6 +18,7 @@ public class CustomerServiceImplTest extends TestCase {
 
 
 	protected void setUp() throws Exception {
+		
 		super.setUp();
 
 		serviceFactory = ServiceFactory.getInstance();
@@ -29,17 +30,18 @@ public class CustomerServiceImplTest extends TestCase {
 
 
 	public final void testValidateCustomer() {
-
 		ICustomerService customerService;
-		try {
-			customerService = (ICustomerService) serviceFactory
-					.getService(ICustomerService.NAME);
+		
+		try { customerService = (ICustomerService) serviceFactory
+			.getService(ICustomerService.NAME);
 			assertTrue(customerService.validateCustomer(customer));
-			System.out.println("testValidateCustomer PASSED");
+			System.out.println("Test ValidateCustomer PASSED");
+			
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("ServiceLoadException");
+			
 		} catch (CustomerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -47,15 +49,16 @@ public class CustomerServiceImplTest extends TestCase {
 
 		}
 
-		try {
-			CustomerServiceImpl customerServiceImpl = (CustomerServiceImpl) serviceFactory
-					.getService(ICustomerService.NAME);
+		try { CustomerServiceImpl customerServiceImpl = (CustomerServiceImpl) serviceFactory
+			.getService(ICustomerService.NAME);
 			assertTrue(customerServiceImpl.validateCustomer(customer));
-			System.out.println("ValidateCustomer PASSED");
+			System.out.println("Test ValidateCustomer PASSED");
+			
 		} catch (ServiceLoadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("ServiceLoadException");
+			
 		} catch (CustomerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
