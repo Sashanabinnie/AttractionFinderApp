@@ -1,10 +1,10 @@
 package testimonials.domain;
 
 import junit.framework.TestCase;
+import model.domain.Attractions;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import domain.Attractions;
 
 public class AttractionsTest extends TestCase {
 	

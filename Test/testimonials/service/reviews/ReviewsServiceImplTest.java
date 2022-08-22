@@ -1,12 +1,12 @@
 package testimonials.service.reviews;
 
-import domain.Reviews;
 import junit.framework.TestCase;
-import service.exceptions.ReviewsException;
-import service.exceptions.ServiceLoadException;
-import service.factory.ServiceFactory;
-import service.reviewsservice.IReviewsService;
-import service.reviewsservice.ReviewsServiceImpl;
+import model.domain.Reviews;
+import model.service.exception.ReviewsException;
+import model.service.exception.ServiceLoadException;
+import model.service.factory.ServiceFactory;
+import model.service.reviewsservice.IReviewsService;
+import model.service.reviewsservice.ReviewsServiceImpl;
 
 
 

@@ -1,12 +1,14 @@
 package testimonials.service.attractions;
 
-import domain.Attractions;
 import junit.framework.TestCase;
-import service.attractionsservice.AttractionsServiceImpl;
-import service.attractionsservice.IAttractionsService;
-import service.customerservice.ICustomerService;
-import service.exceptions.*;
-import service.factory.ServiceFactory;
+import model.domain.Attractions;
+import model.service.attractionsservice.AttractionsServiceImpl;
+import model.service.attractionsservice.IAttractionsService;
+import model.service.customerservice.ICustomerService;
+import model.service.exception.AttractionsException;
+import model.service.exception.ServiceLoadException;
+import model.service.factory.ServiceFactory;
+
 
 public class AttractionsServiceImplTest extends TestCase {
 

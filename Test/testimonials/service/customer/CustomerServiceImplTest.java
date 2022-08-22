@@ -1,12 +1,12 @@
 package testimonials.service.customer;
 
 import junit.framework.TestCase;
-import domain.Customer;
-import service.customerservice.CustomerServiceImpl;
-import service.customerservice.ICustomerService;
-import service.exceptions.CustomerException;
-import service.exceptions.ServiceLoadException;
-import service.factory.ServiceFactory;
+import model.domain.Customer;
+import model.service.customerservice.CustomerServiceImpl;
+import model.service.customerservice.ICustomerService;
+import model.service.exception.CustomerException;
+import model.service.exception.ServiceLoadException;
+import model.service.factory.ServiceFactory;
 
 
 

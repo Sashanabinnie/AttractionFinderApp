@@ -1,10 +1,10 @@
  package testimonials.business.manager;
 
-import business.manager.AttractionsManager;
-import domain.Attractions;
-import service.reviewsservice.IReviewsService;
-import domain.Reviews;
 import junit.framework.TestCase;
+import model.business.manager.AttractionsManager;
+import model.domain.Attractions;
+import model.domain.Reviews;
+import model.service.reviewsservice.IReviewsService;
 
 public class AttractionsManagerTest extends TestCase {
 

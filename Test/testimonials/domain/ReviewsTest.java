@@ -2,8 +2,9 @@ package testimonials.domain;
 
 import org.junit.Before;
 import junit.framework.TestCase;
+import model.domain.Reviews;
+
 import org.junit.Test;
-import domain.Reviews;
 
 public class ReviewsTest extends TestCase{
 

@@ -3,14 +3,15 @@ package testimonials.service.factory;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import service.attractionsservice.AttractionsServiceImpl;
-import service.attractionsservice.IAttractionsService;
-import service.customerservice.CustomerServiceImpl;
-import service.customerservice.ICustomerService;
-import service.exceptions.ServiceLoadException;
-import service.factory.ServiceFactory;
-import service.reviewsservice.IReviewsService;
-import service.reviewsservice.ReviewsServiceImpl;
+
+import model.service.attractionsservice.AttractionsServiceImpl;
+import model.service.attractionsservice.IAttractionsService;
+import model.service.customerservice.CustomerServiceImpl;
+import model.service.customerservice.ICustomerService;
+import model.service.exception.ServiceLoadException;
+import model.service.factory.ServiceFactory;
+import model.service.reviewsservice.IReviewsService;
+import model.service.reviewsservice.ReviewsServiceImpl;
 
 public class ServiceFactoryTest {
 

@@ -1,9 +1,11 @@
 package testimonials.business.factory;
 
 import junit.framework.TestCase;
-import service.exceptions.ServiceLoadException;
-import service.factory.*;
-import service.reviewsservice.*;
+import model.service.exception.ServiceLoadException;
+import model.service.factory.ServiceFactory;
+import model.service.reviewsservice.IReviewsService;
+import model.service.reviewsservice.ReviewsServiceImpl;
+
 
 
 public class ServiceFactoryTest extends TestCase {
